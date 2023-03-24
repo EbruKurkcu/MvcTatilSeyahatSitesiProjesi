@@ -1,0 +1,77 @@
+﻿@*@using TatilSeyahatSitesi.Models.Siniflar
+@model List<Blog>*@
+
+@model TatilSeyahatSitesi.Models.Siniflar.BlogYorum
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Personal Blog a Blogging Category Flat Bootstarp  Responsive Website Template | Single :: w3layouts</title>
+    <link href="~/web2/css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link href="~/web2/css/style.css" rel='stylesheet' type='text/css' />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Personal Blog Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+    
+
+</head>
+<body>
+
+ 
+    <div class="single">
+        <div class="container">
+           
+            <div class="col-md-8 single-main">
+                @foreach (var x in Model.Deger1)
+                {
+                    <div class="single-grid">
+                        <img src="@x.BlogImage" alt="" style="margin-bottom:20px" />
+                        <br /><br />
+                        <a href="/Blog/BlogDetay/@x.ID">@x.Baslik</a>
+                        <p>
+                            @x.Aciklama
+                        </p>
+                    </div>
+                }
+                </div>
+           
+
+            <div class="col-md-4 side-content">
+                
+                <div class="recent">
+                    <h3>SON BLOGLAR</h3>
+                    @foreach (var x in Model.Deger3)
+                    {
+                    <ul>
+                        <li><a href="/Blog/BlogDetay/@x.ID">@x.Baslik</a></li>
+                    </ul>
+                    }
+                </div>
+
+                
+                <div class="comments">
+                    <h3>SON YORUMLAR</h3>
+                    @foreach (var x in Model.Deger2)
+                    {
+                        <ul>
+                            <li> <a href="#">@x.Yorum</a></li>
+
+                        </ul>
+                    }
+                    </div>
+               
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+
+</body>
+</html>
+

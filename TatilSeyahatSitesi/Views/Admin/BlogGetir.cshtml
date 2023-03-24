@@ -1,0 +1,31 @@
+﻿@model TatilSeyahatSitesi.Models.Siniflar.Blog
+@{
+    ViewBag.Title = "BlogGetir";
+    Layout = "~/Views/Shared/_AdminLoyout.cshtml";
+}
+
+<h2>Güncelleme Sayfası</h2>
+
+@using (Html.BeginForm("Guncelle", "Admin", FormMethod.Post))
+{
+    <label>ID</label>
+    @Html.TextBoxFor(m => m.ID, new { @class = "form-control" ,@readonly="readonly" }) //readonly ıd'yi dışarıdan değiştirilmemeisi için kullandık.
+    <br />
+    <label>BAŞLIK</label>
+    @Html.TextBoxFor(m => m.Baslik, new { @class = "form-control" })
+    <br />
+
+    <label>TARİH</label>
+    @Html.TextBoxFor(m => m.Tarih, new { @class = "form-control" })
+    <br />
+
+    <label>AÇIKLAMA</label>
+    @Html.TextAreaFor(m => m.Aciklama,15,1, new { @class = "form-control" })
+    <br />
+
+    <label>BLOG GÖRSEL</label>
+    @Html.TextBoxFor(m => m.BlogImage, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-primary">GÜNCELLE</button>
+}

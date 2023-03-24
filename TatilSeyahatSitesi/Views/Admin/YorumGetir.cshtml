@@ -1,0 +1,29 @@
+﻿@model TatilSeyahatSitesi.Models.Siniflar.Yorumlar
+@{
+    ViewBag.Title = "YorumGetir";
+    Layout = "~/Views/Shared/_AdminLoyout.cshtml";
+}
+
+<h2>Yorum Güncelleme Sayfası</h2>
+
+<br />
+@using (Html.BeginForm("YorumGuncelle", "Admin", FormMethod.Post))
+{
+    <label>ID</label>
+    @Html.TextBoxFor(m => m.ID, new { @class = "form-control" })
+    <br />
+
+    <label>KULLANICI ADI</label>
+    @Html.TextBoxFor(m => m.KullaniciAdi, new { @class = "form-control" })
+    <br />
+
+    <label>MAİL</label>
+    @Html.TextBoxFor(m => m.Mail, new { @class = "form-control" })
+    <br />
+
+    <label>YORUMLAR</label>
+    @Html.TextAreaFor(m => m.Yorum, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-success">GÜNCELLE</button>
+}

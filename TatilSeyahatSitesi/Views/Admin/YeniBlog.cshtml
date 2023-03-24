@@ -1,0 +1,30 @@
+﻿@model TatilSeyahatSitesi.Models.Siniflar.Blog
+@{
+    ViewBag.Title = "YeniEkle";
+    Layout = "~/Views/Shared/_AdminLoyout.cshtml";
+}
+
+<h2>Yeni Blog Ekleme Sayfası</h2>
+<br />
+
+<form class="form-group" method="post">
+
+    <label>BAŞLIK</label>
+    @Html.TextBoxFor(m => m.Baslik, new { @class = "form-control" })
+    <br />
+
+    <label>TARİH</label>
+    @Html.TextBoxFor(m => m.Tarih, new { @class = "form-control" })
+    <br />
+
+    <label>AÇIKLAMA</label>
+    @Html.TextAreaFor(m => m.Aciklama, new { @class = "form-control" })
+    <br />
+
+    <label>BLOG GÖRSEL</label>
+    @Html.TextBoxFor(m => m.BlogImage, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-primary">EKLE</button>
+</form>
+
